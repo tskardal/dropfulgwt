@@ -8,11 +8,12 @@
     <artifactId>dropfulgwt</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
-    <name>Dropful GWT - A dropwizard + resty + GWT example</name>
+    <name>Dropful GWT - A dropwizard + RestyGWT example</name>
 
     <modules>
         <module>dropfulgwt-client</module>
-        <module>dropfulgwt-core</module>
+        <module>dropfulgwt-shared</module>
+        <module>dropfulgwt-server</module>
     </modules>
     
     <properties>
@@ -34,6 +35,23 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.skardal.dropfulgwt</groupId>
+                <artifactId>dropfulgwt-shared</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt</artifactId>
+                <version>${gwt.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
