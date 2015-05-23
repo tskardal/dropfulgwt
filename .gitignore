@@ -89,6 +89,7 @@ crashlytics-build.properties
 
 
 ### Java ###
+=======
 *.class
 
 # Mobile Tools for Java (J2ME)
