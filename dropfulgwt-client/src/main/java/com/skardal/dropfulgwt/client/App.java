@@ -15,20 +15,7 @@ public class App implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
-		Defaults.setServiceRoot("/api");
-		HelloWorldService helloWorldService = GWT.create(HelloWorldService.class);
-		helloWorldService.helloWorld(new MethodCallback<Saying>() {
-			
-			@Override
-			public void onSuccess(Method method, Saying response) {
-				RootPanel.get().add(new Label(String.valueOf(response.getId() + " - " + response.getContent())));				
-			}
-			
-			@Override
-			public void onFailure(Method method, Throwable exception) {
-				RootPanel.get().add(new Label("Something went wrong :-/"));
-			}
-		});		
+		RootPanel.get().add(new HelloWorld());
 	}
 
 }

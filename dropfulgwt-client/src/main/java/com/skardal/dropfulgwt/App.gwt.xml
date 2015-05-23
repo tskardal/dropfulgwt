@@ -4,7 +4,10 @@
 	<inherits name="com.google.gwt.user.User" />
 	<inherits name="com.skardal.dropfulgwt.Shared"/>
 	<inherits name="org.fusesource.restygwt.RestyGWT"/>
-	
+	<inherits name="com.google.gwt.query.Query"/>
+	<inherits name="com.google.common.base.Base"/>
+	<inherits name="com.google.common.collect.Collect"/>
+
 	<source path="client" />
 	
 	<entry-point class="com.skardal.dropfulgwt.client.App" />
