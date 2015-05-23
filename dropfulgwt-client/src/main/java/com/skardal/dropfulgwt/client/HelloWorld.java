@@ -30,35 +30,32 @@ public class HelloWorld extends Composite {
     Button sayHello;
     @UiField
     SimplePanel result;
+    
+    private final HelloWorldService helloWorldService;
 
     interface Binder extends UiBinder<Widget, HelloWorld> {
     }
 
     public HelloWorld() {
         initWidget(((Binder) GWT.create(Binder.class)).createAndBindUi(this));
+        helloWorldService = GWT.create(HelloWorldService.class);
     }
 
     @UiHandler("sayHello")
     void onSayHello(ClickEvent event) {
-        Defaults.setServiceRoot("/api");
-        HelloWorldService helloWorldService = GWT.create(HelloWorldService.class);
-        String theName = name.getText();
-        
         final MethodCallback<Saying> callback = new MethodCallback<Saying>() {
             @Override
             public void onSuccess(Method method, Saying response) {
                 result.setWidget(new Label(response.getContent()));
             }
-
+            
             @Override
             public void onFailure(Method method, Throwable exception) {
                 result.setWidget(new Label("Something went wrong :-/"));
             }
         };
 
-        FluentIterable.from(Arrays.asList(1, 2, 3));
-
-        if (Strings.isNullOrEmpty(theName)) {
+        if (Strings.isNullOrEmpty(name.getText())) {
             helloWorldService.helloWorld(callback);
         } else {
             helloWorldService.helloWorld(name.getText(), callback);

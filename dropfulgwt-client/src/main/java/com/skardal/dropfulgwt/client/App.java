@@ -15,6 +15,7 @@ public class App implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
+		Defaults.setServiceRoot("/api");
 		RootPanel.get().add(new HelloWorld());
 	}
 
