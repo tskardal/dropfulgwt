@@ -14,7 +14,7 @@ The "bundling" of the GWT app feels a bit hackish but it works. Pull requests ar
 ## My current workflow
 
 * Start a GWT runner inside the IDE and store the compiled output to the assets folder
-** Using (Super)Devmode: `-war /absolute/path/to/dropfulgwt-server/src/main/resources/assets`
-** Using Codeserver directly: `-launcherDir /absolute/path/to/dropfulgwt-server/src/main/resources/assets`
+  * Using (Super)Devmode: `-war /absolute/path/to/dropfulgwt-server/src/main/resources/assets`
+  * Using Codeserver directly: `-launcherDir /absolute/path/to/dropfulgwt-server/src/main/resources/assets`
 * Start the dropwizard application (in debug mode to allow hot swapping)
 * Rock on!
